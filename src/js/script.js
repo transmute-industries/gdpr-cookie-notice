@@ -9,7 +9,8 @@ function gdprCookieNotice(config) {
   var modalLoaded = false;
   var noticeLoaded = false;
   var cookiesAccepted = false;
-  var categories = ['performance', 'analytics', 'marketing'];
+  // var categories = ['performance', 'analytics', 'marketing'];
+  var categories = ['analytics'];
 
   // Default config options
   if(!config.locale) config.locale = 'en';
@@ -52,11 +53,11 @@ function gdprCookieNotice(config) {
     }
 
     // Show the notice if not all categories are enabled
-    if(notAllEnabled) {
-      showNotice();
-    } else {
+    // if(notAllEnabled) {
+    //   showNotice();
+    // } else {
       hideNotice();
-    }
+    // }
   }
 
   // Hide cookie notice bar
@@ -69,9 +70,9 @@ function gdprCookieNotice(config) {
     var value = {
       date: new Date(),
       necessary: true,
-      performance: true,
+      // performance: true,
       analytics: true,
-      marketing: true
+      // marketing: true
     };
 
     // If request was coming from the modal, check for the settings
@@ -183,9 +184,9 @@ function gdprCookieNotice(config) {
 
     // Update checkboxes based on stored info(if any)
     if(currentCookieSelection) {
-      document.getElementById(pluginPrefix+'-cookie_performance').checked = currentCookieSelection.performance;
+      // document.getElementById(pluginPrefix+'-cookie_performance').checked = currentCookieSelection.performance;
       document.getElementById(pluginPrefix+'-cookie_analytics').checked = currentCookieSelection.analytics;
-      document.getElementById(pluginPrefix+'-cookie_marketing').checked = currentCookieSelection.marketing;
+      // document.getElementById(pluginPrefix+'-cookie_marketing').checked = currentCookieSelection.marketing;
     }
 
     // Make sure modal is only loaded once
